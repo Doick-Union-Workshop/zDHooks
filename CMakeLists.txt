@@ -5,7 +5,7 @@ set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 
 include(target_add_versioninfo)
 
-project(UnionPlugin
+project(zDHooks
 	DESCRIPTION "Union plugin for Gothic Games"
 	VERSION 1.0.0.0
 )

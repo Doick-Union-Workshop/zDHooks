@@ -11,6 +11,7 @@ HOOKSPACE(Gothic_I_Classic, GetGameVersion() == ENGINE);
 #include "Sources.hpp"
 #endif
 
+/*
 #ifdef __G1A
 #define GOTHIC_NAMESPACE Gothic_I_Addon
 #define ENGINE Engine_G1A
@@ -24,6 +25,7 @@ HOOKSPACE(Gothic_I_Addon, GetGameVersion() == ENGINE);
 HOOKSPACE(Gothic_II_Classic, GetGameVersion() == ENGINE);
 #include "Sources.hpp"
 #endif
+*/
 
 #ifdef __G2A
 #define GOTHIC_NAMESPACE Gothic_II_Addon

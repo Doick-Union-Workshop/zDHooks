@@ -5,4 +5,5 @@
 #include "Gothic/Hooks_oCMenu_Status.hpp"
 #include "Gothic/Hooks_oCNpc.hpp"
 #include "Gothic/Hooks_oCViewDialogTrade.hpp"
+#include "Gothic/Hooks_oCInfo.hpp"
 #include "Plugin.hpp"

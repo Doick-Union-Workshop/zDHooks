@@ -42,7 +42,8 @@ namespace GOTHIC_NAMESPACE
                 else
                 {
                     parser->SetInstance("ITEM", item);
-                    parser->SetInstance("SELF", this);
+                    parser->SetInstance("SELF", this->NpcRight); // Player
+                    parser->SetInstance("OTHER", this->NpcLeft); // Trader
                     canSellItem = *(int*)parser->CallFunc(conditionFunc);
                 }
 

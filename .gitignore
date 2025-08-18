@@ -1,0 +1,15 @@
+# Visual Studio
+
+/.vs/
+
+# Visual Studio Cocd
+
+/.vscode/
+
+# CLion
+
+/.idea/
+
+# Build directories
+
+/out/

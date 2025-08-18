@@ -5,7 +5,7 @@ namespace GOTHIC_NAMESPACE
     auto Hook_oCNpc_EV_DropVob = Union::CreateHook(reinterpret_cast<int*>(zSwitch(0, 0x007538C0)), &oCNpc::Hook_EV_DropVob);
     int __thiscall oCNpc::Hook_EV_DropVob(oCMsgManipulate* t_csg)
     {
-        static Utils::Logger* log = Utils::CreateLogger("DSP::Hooks::oCNpc_EV_DropVob");
+        static Utils::Logger* log = Utils::CreateLogger("zDHooks::oCNpc_EV_DropVob");
         zCModel* model = GetModel();
         SetBodyState(BS_INVENTORY);
 

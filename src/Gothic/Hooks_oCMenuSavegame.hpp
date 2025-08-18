@@ -5,7 +5,7 @@ namespace GOTHIC_NAMESPACE
 	auto Hook_oCMenuSavegame_HandleSlotChange = Union::CreateHook(reinterpret_cast<void*>(zSwitch(0x0042C420, 0x0042E940)), &oCMenuSavegame::Hook_HandleSlotChange);
 	void __thiscall oCMenuSavegame::Hook_HandleSlotChange(int t_key)
 	{
-		static Utils::Logger* log = Utils::CreateLogger("DSP::Hooks::oCMenuSavegame_HandleSlotChange");
+		static Utils::Logger* log = Utils::CreateLogger("zDHooks::oCMenuSavegame_HandleSlotChange");
 
 		(this->*Hook_oCMenuSavegame_HandleSlotChange)(t_key);
 

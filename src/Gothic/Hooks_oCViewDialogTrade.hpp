@@ -29,26 +29,26 @@ namespace GOTHIC_NAMESPACE
 
                 if (item->GetInstanceName() == oCItemContainer::GetCurrencyInstanceName())
                 {
-                    log->Info("Player cannot sell item `{0}`, because it's currency item.", item->GetInstanceName());
+                    log->Info("Cannot sell item '{0}', because it's currency item.", item->GetInstanceName());
                     return 1;
                 }
 
                 int conditionFunc = parser->GetIndex("C_PLAYERCANSELLITEM");
-                int canPlayerSellItem = 1;
+                int canSellItem = 1;
 
                 if (conditionFunc <= 0) {
-                    log->Warning("`C_PlayerCanSellItem` function not found.");
+                    log->Warning("Function 'C_PlayerCanSellItem' not found.");
                 }
                 else
                 {
                     parser->SetInstance("ITEM", item);
                     parser->SetInstance("SELF", this);
-                    canPlayerSellItem = *(int*)parser->CallFunc(conditionFunc);
+                    canSellItem = *(int*)parser->CallFunc(conditionFunc);
                 }
 
-                if (!canPlayerSellItem)
+                if (!canSellItem)
                 {
-                    log->Info("Player cannot sell item: {0}", item->GetInstanceName());
+                    log->Info("Cannot sell item: {0}", item->GetInstanceName());
                     return 1;
                 }
 

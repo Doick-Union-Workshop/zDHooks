@@ -12,7 +12,7 @@ namespace GOTHIC_NAMESPACE
 		int index = parser->GetIndex("MENU_STATUS_API");
 
 		if (index <= 0)
-			log->Warning("`Menu_Status_API` function not found.");
+			log->Warning("Function 'Menu_Status_API' not found.");
 		else
 			parser->CallFunc(index);
 	}

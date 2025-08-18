@@ -16,21 +16,21 @@ namespace GOTHIC_NAMESPACE
             oCItem* itm = dynamic_cast<oCItem*>(t_csg->targetVob);
 
             int conditionFunc = parser->GetIndex("C_PLAYERCANDROPITEM");
-            int canPlayerDropItem = 1;
+            int canDropItem = 1;
 
             if (conditionFunc <= 0) {
-                log->Warning("`C_PlayerCanDropItem` function not found.");
+                log->Warning("Function 'C_PlayerCanDropItem' not found.");
             }
             else
             {
                 parser->SetInstance("ITEM", itm);
                 parser->SetInstance("SELF", this);
-                canPlayerDropItem = *(int*)parser->CallFunc(conditionFunc);
+                canDropItem = *(int*)parser->CallFunc(conditionFunc);
             }
 
-            if (!canPlayerDropItem)
+            if (!canDropItem)
             {
-                log->Info("Player cannot drop item: {0}", itm->GetInstanceName());
+                log->Info("Cannot drop item: {0}", itm->GetInstanceName());
                 return 1;
             }
 

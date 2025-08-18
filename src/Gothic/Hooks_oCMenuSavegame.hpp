@@ -12,7 +12,7 @@ namespace GOTHIC_NAMESPACE
 		int index = parserMenu->GetIndex("MENU_SAVEGAME_API");
 
 		if (index <= 0)
-			log->Warning("`Menu_SaveGame_API` function not found.");
+			log->Warning("Function 'Menu_SaveGame_API' not found.");
 		else
 			parser->CallFunc(index);
 	}

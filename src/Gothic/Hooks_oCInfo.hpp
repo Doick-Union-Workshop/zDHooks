@@ -8,8 +8,10 @@ namespace GOTHIC_NAMESPACE
      *
      */
 	// G1:  0x006658A0 public: void __thiscall oCInfo::Info(void)
+	// G1A: 0x00692DC0 public: void __thiscall oCInfo::Info(void)
+    // G2:  0x006A5EE0 public: void __thiscall oCInfo::Info(void)
     // G2A: 0x00703970 public: void __thiscall oCInfo::Info(void)
-    auto Hook_oCInfo_Info = Union::CreateHook(reinterpret_cast<void*>(zSwitch(0x006658A0, 0x00703970)), &oCInfo::Hook_Info);
+    auto Hook_oCInfo_Info = Union::CreateHook(reinterpret_cast<void*>(zSwitch(0x006658A0, 0x00692DC0, 0x006A5EE0, 0x00703970)), &oCInfo::Hook_Info);
     void oCInfo::Hook_Info(void)
     {
         zCPar_Symbol* symbol1 = parser->GetSymbol("DIA_CURRENTNAME");

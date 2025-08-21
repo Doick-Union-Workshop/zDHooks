@@ -1,6 +1,8 @@
 namespace GOTHIC_NAMESPACE
 {
 #if ENGINE == Engine_G2A
+    static const zSTRING C_PLAYER_CAN_DROP_ITEM = "C_PLAYERCANDROPITEM";
+
     // G2A: 0x007538C0 protected: int __thiscall oCNpc::EV_DropVob(class oCMsgManipulate *)
     auto Hook_oCNpc_EV_DropVob = Union::CreateHook(reinterpret_cast<int*>(zSwitch(0, 0x007538C0)), &oCNpc::Hook_EV_DropVob);
     int __thiscall oCNpc::Hook_EV_DropVob(oCMsgManipulate* t_csg)
@@ -15,22 +17,27 @@ namespace GOTHIC_NAMESPACE
 
             oCItem* itm = dynamic_cast<oCItem*>(t_csg->targetVob);
 
-            int conditionFunc = parser->GetIndex("C_PLAYERCANDROPITEM");
+            int conditionFunc = parser->GetIndex(C_PLAYER_CAN_DROP_ITEM);
             int canDropItem = 1;
 
             if (conditionFunc <= 0) {
-                log->Warning("Function 'C_PlayerCanDropItem' not found.");
+                LogDaedalusCallError(log, C_PLAYER_CAN_DROP_ITEM, eCallFuncError::WRONG_SYMBOL, Utils::LoggerLevel::Warn);
             }
             else
             {
                 parser->SetInstance("ITEM", itm);
                 parser->SetInstance("SELF", this);
-                canDropItem = *(int*)parser->CallFunc(conditionFunc);
+                const auto result = DaedalusCall<int>(parser, DCFunction(C_PLAYER_CAN_DROP_ITEM), {});
+
+                if (result.has_value())
+                    canDropItem = *result;
+                else
+                    LogDaedalusCallError(log, C_PLAYER_CAN_DROP_ITEM, result.error(), Utils::LoggerLevel::Warn);
             }
 
             if (!canDropItem)
             {
-                log->Info("Cannot drop item: {0}", itm->GetInstanceName());
+                log->Info("Cannot drop item: {0}", itm->GetInstanceName().ToChar());
                 return 1;
             }
 

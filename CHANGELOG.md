@@ -1,2 +1,5 @@
-[1.0.0]
-- Initial release
+- docs: add contributing guidelines
+- docs: rewrite README
+- fix: hook creation type casting for item drop and trade transfer hooks
+- feat: add DaedalusCall by @bogu9821
+- build: require minimum version 3.25 and set CXX_STANDARD to 23

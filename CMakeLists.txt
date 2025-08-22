@@ -7,7 +7,7 @@ include(target_add_versioninfo)
 
 project(zDHooks
 	DESCRIPTION "Union plugin for Gothic Games"
-	VERSION 1.0.0.0
+	VERSION 1.0.1.0
 )
 
 set(CMAKE_CXX_STANDARD 23)

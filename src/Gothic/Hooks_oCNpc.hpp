@@ -4,7 +4,7 @@ namespace GOTHIC_NAMESPACE
     static const zSTRING C_PLAYER_CAN_DROP_ITEM = "C_PLAYERCANDROPITEM";
 
     // G2A: 0x007538C0 protected: int __thiscall oCNpc::EV_DropVob(class oCMsgManipulate *)
-    auto Hook_oCNpc_EV_DropVob = Union::CreateHook(reinterpret_cast<int*>(zSwitch(0, 0x007538C0)), &oCNpc::Hook_EV_DropVob);
+    auto Hook_oCNpc_EV_DropVob = Union::CreateHook(reinterpret_cast<void*>(0x007538C0), &oCNpc::Hook_EV_DropVob);
     int __thiscall oCNpc::Hook_EV_DropVob(oCMsgManipulate* t_csg)
     {
         static Utils::Logger* log = Utils::CreateLogger("zDHooks::oCNpc::EV_DropVob");

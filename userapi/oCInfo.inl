@@ -1,1 +1,1 @@
-void Hook_Info();
+void Hook_Info(void);

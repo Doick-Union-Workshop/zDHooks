@@ -4,7 +4,7 @@ namespace GOTHIC_NAMESPACE
     static const zSTRING C_PLAYER_CAN_SELL_ITEM = "C_PLAYERCANSELLITEM";
 
     // G2A: 0x0068B840 protected: int __fastcall oCViewDialogTrade::OnTransferLeft(short)
-    auto Hook_oCViewDialogTrade_OnTransferLeft = Union::CreateHook(reinterpret_cast<int*>(zSwitch(0, 0x0068B840)), &oCViewDialogTrade::Hook_OnTransferLeft);
+    auto Hook_oCViewDialogTrade_OnTransferLeft = Union::CreateHook(reinterpret_cast<void*>(0x0068B840), &oCViewDialogTrade::Hook_OnTransferLeft);
     int __fastcall oCViewDialogTrade::Hook_OnTransferLeft(short t_amount)
     {
         static Utils::Logger* log = Utils::CreateLogger("zDHooks::oCViewDialogTrade::OnTransferLeft");

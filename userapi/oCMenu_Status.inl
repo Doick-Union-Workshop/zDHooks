@@ -1,1 +1,1 @@
-void Hook_InitForDisplay();
+void Hook_InitForDisplay(void);

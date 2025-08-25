@@ -1,8 +1,8 @@
-chore: update changelog and contributing guidelines
-build: set version to 1.0.0 and change project name
-docs: rewrite README
-refactor: move zDDocs to docs directory
-refactor: merge zDExternals with zDHooks
+- chore: update changelog and contributing guidelines
+- build: set version to 1.0.0 and change project name
+- docs: rewrite README
+- refactor: move zDDocs to docs directory
+- refactor: merge zDExternals with zDHooks
 
 [Hooks]
 - chore: bump version to 1.0.1

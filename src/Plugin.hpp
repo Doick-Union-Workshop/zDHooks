@@ -110,9 +110,91 @@ namespace GOTHIC_NAMESPACE
 
 	}
 
+#pragma push_macro("RGBA")
+#undef RGBA
+
+	BetterExternalDefinition(parser,
+		BetterDaedalusExternal(Menu_SetItemText),
+		BetterDaedalusExternal(Menu_GetItemText),
+		BetterDaedalusExternal(Str_Upper),
+		BetterDaedalusExternal(Str_Lower),
+		BetterDaedalusExternal(Str_Capitel),
+		BetterDaedalusExternal(AI_TurnToWP),
+		BetterDaedalusExternal(AI_TurnToVob),
+		BetterDaedalusExternal(Npc_GetRoutineFuncName),
+		BetterDaedalusExternal(Npc_GetRoutineName),
+		BetterDaedalusExternal(Npc_EquipItem),
+		BetterDaedalusExternal(Npc_GetWalkMode),
+		BetterDaedalusExternal(Npc_IsStanding),
+		BetterDaedalusExternal(Npc_IsWalking),
+		BetterDaedalusExternal(Npc_HasOverlayMds),
+		BetterDaedalusExternal(Npc_HasTimedOverlayMds),
+		BetterDaedalusExternal(Npc_OpenDeadNpcInventory),
+		BetterDaedalusExternal(Npc_CloseInventory),
+		BetterDaedalusExternal(Npc_CloseInventorySteal),
+		BetterDaedalusExternal(Npc_CloseDeadNpcInventory),
+		BetterDaedalusExternal(Npc_Teleport),
+		BetterDaedalusExternal(Cast_InstanceIsVob),
+		BetterDaedalusExternal(Hlp_GetItem),
+		BetterDaedalusExternal(Hlp_IsValidVob),
+		BetterDaedalusExternal(Hlp_GetNpcPlunderedByPlayer),
+		BetterDaedalusExternal(Log_GetMissionStatus),
+		BetterDaedalusExternalWithName(Wld_InsertVob, Wld_InsertVob<zCVob>),
+		BetterDaedalusExternalWithName(Wld_InsertMob, Wld_InsertVob<oCMOB>),
+		BetterDaedalusExternalWithName(Wld_InsertMobInter, Wld_InsertVob<oCMobInter>),
+		BetterDaedalusExternalWithName(Wld_InsertMobContainer, Wld_InsertVob<oCMobContainer>),
+		BetterDaedalusExternalWithName(Wld_InsertMobFire, Wld_InsertVob<oCMobFire>),
+		BetterDaedalusExternalWithName(Wld_InsertMobDoor, Wld_InsertVob<oCMobDoor>),
+		BetterDaedalusExternalWithName(Wld_InsertMobBed, Wld_InsertVob<oCMobBed>),
+		BetterDaedalusExternalWithName(Wld_InsertVobPos, Wld_InsertVobPos<zCVob>),
+		BetterDaedalusExternalWithName(Wld_InsertMobPos, Wld_InsertVobPos<oCMOB>),
+		BetterDaedalusExternalWithName(Wld_InsertMobInterPos, Wld_InsertVobPos<oCMobInter>),
+		BetterDaedalusExternalWithName(Wld_InsertMobContainerPos, Wld_InsertVobPos<oCMobContainer>),
+		BetterDaedalusExternalWithName(Wld_InsertMobFirePos, Wld_InsertVobPos<oCMobFire>),
+		BetterDaedalusExternalWithName(Wld_InsertMobDoorPos, Wld_InsertVobPos<oCMobDoor>),
+		BetterDaedalusExternalWithName(Wld_InsertMobBedPos, Wld_InsertVobPos<oCMobBed>),
+		BetterDaedalusExternal(Wld_RemoveVob),
+		BetterDaedalusExternal(Wld_GetPlayerPortalRoom),
+		BetterDaedalusExternal(Wld_IsDay),
+		BetterDaedalusExternal(Wld_IsNight),
+		BetterDaedalusExternal(Wld_SetRainTime),
+		BetterDaedalusExternal(Wld_SetRainOn),
+		BetterDaedalusExternal(Wld_SetRainOff),
+		BetterDaedalusExternal(Wld_GetWorldName),
+		BetterDaedalusExternal(Wld_OverrideWorldFogColors),
+		BetterDaedalusExternal(Wld_GetPos),
+		BetterDaedalusExternal(Vob_MoveTo),
+		BetterDaedalusExternal(Vob_MoveToPos),
+		BetterDaedalusExternal(Vob_SetCollisionDetection),
+		BetterDaedalusExternal(Vob_Rotate),
+		BetterDaedalusExternal(Vob_SetVisual),
+		BetterDaedalusExternal(Vob_SetToFloor),
+		BetterDaedalusExternal(Mob_SetFocusName),
+		BetterDaedalusExternal(Mob_GetFocusName),
+		BetterDaedalusExternalWithName(RGBA, Ext_RGBA)
+	);
+
+#pragma pop_macro("RGBA")  
+
 	void Game_DefineExternals()
 	{
+		// TODO: Add BDE definitions when PopVarAddress and array passing are supported
+		parser->DefineExternal("GetIntArrayValue", GetArrayValue<int>,
+			zPAR_TYPE_INT, zPAR_TYPE_INT, zPAR_TYPE_INT, 0);
+		parser->DefineExternal("GetStringArrayValue", GetArrayValue<zSTRING>,
+			zPAR_TYPE_STRING, zPAR_TYPE_STRING, zPAR_TYPE_INT, 0);
+		parser->DefineExternal("SetIntArrayValue", SetArrayValue<int>,
+			zPAR_TYPE_VOID, zPAR_TYPE_INT, zPAR_TYPE_INT, zPAR_TYPE_INT, 0);
+		parser->DefineExternal("SetStringArrayValue", SetArrayValue<zSTRING>,
+			zPAR_TYPE_VOID, zPAR_TYPE_STRING, zPAR_TYPE_INT, zPAR_TYPE_STRING, 0);
 
+		// TODO: Change definitons to BetterDaedalusExternal when multi parser definitons are supported
+		parserMenu->DefineExternal("Menu_SetItemText", Menu_SetItemText_Old,
+			zPAR_TYPE_VOID, zPAR_TYPE_STRING, zPAR_TYPE_STRING, zPAR_TYPE_INT, zPAR_TYPE_INT, 0);
+		parserMenu->DefineExternal("Menu_GetItemText", Menu_GetItemText_Old,
+			zPAR_TYPE_STRING, zPAR_TYPE_STRING, zPAR_TYPE_INT, 0);
+		parserMenu->DefineExternal("Hlp_StrCmp", Hlp_StrCmp_Old,
+			zPAR_TYPE_INT, zPAR_TYPE_STRING, zPAR_TYPE_STRING, 0);
 	}
 
 	void Game_ApplySettings()
@@ -240,13 +322,14 @@ namespace GOTHIC_NAMESPACE
 		Game_Unpause();
 	}*/
 
-	/*void __fastcall oCGame_DefineExternals_Ulfi(oCGame* self, void* vtable, zCParser* parser);
+	void __fastcall oCGame_DefineExternals_Ulfi(oCGame* self, void* vtable, zCParser* parser);
 	auto Hook_oCGame_DefineExternals_Ulfi = Union::CreateHook(reinterpret_cast<void*>(zSwitch(0x006495B0, 0x006715F0, 0x00677A00, 0x006D4780)), &oCGame_DefineExternals_Ulfi, Union::HookType::Hook_Detours);
 	void __fastcall oCGame_DefineExternals_Ulfi(oCGame* self, void* vtable, zCParser* parser)
 	{
 		Hook_oCGame_DefineExternals_Ulfi(self, vtable, parser);
 		Game_DefineExternals();
-	}*/
+		BetterDaedalusExternals::DefineExternals();
+	}
 
 	/*void __fastcall CGameManager_ApplySomeSettings(CGameManager* self, void* vtable);
 	auto Hook_CGameManager_ApplySomeSettings = Union::CreateHook(reinterpret_cast<void*>(zSwitch(0x004267C0, 0x004291E0, 0x00427370, 0x004276B0)), &CGameManager_ApplySomeSettings, Union::HookType::Hook_Detours);

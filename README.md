@@ -13,7 +13,7 @@ Documentation of project is provided as a [GitHub Page site](https://doick-union
 
 ## Support
 
-If you have found a bug in zDHooks, please [create an issue](https://github.com/Doick-Union-Workshop/zDExtensions/issues/new).
+If you have found a bug in zDExtensions, please [create an issue](https://github.com/Doick-Union-Workshop/zDExtensions/issues/new).
 
 ### Discord
 

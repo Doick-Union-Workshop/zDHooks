@@ -12,7 +12,7 @@ Each commit message **must** follow this format:
 ```
 
 - **type** – describes the category of change (see below)  
-- **scope** – optional, specifies the part of the codebase
+- **scope** – optional, specifies the part of the codebase, e.g. `externals` or `hooks`
 - **description** – short summary in present tense, lowercase, no period at the end
 
 ## Commit Types
@@ -23,6 +23,7 @@ Each commit message **must** follow this format:
 - **style** – formatting, whitespace, missing semicolons, etc. (no code changes)
 - **refactor** – code change that neither fixes a bug nor adds a feature
 - **perf** – performance improvement
+- **build** – changes to the build system or external dependencies
 - **ci** – changes to CI/CD configuration files
 - **chore** – other changes
 

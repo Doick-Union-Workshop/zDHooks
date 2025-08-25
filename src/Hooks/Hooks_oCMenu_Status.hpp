@@ -14,7 +14,7 @@ namespace GOTHIC_NAMESPACE
 	{
 		(this->*Hook_oCMenu_Status_InitForDisplay)();
 
-		static Utils::Logger* log = Utils::CreateLogger("zDHooks::oCMenu_Status::InitForDisplay");
+		static Utils::Logger* log = Utils::CreateLogger("zDExt::oCMenu_Status::InitForDisplay");
 
 		const auto api = DaedalusCall(parser, DCFunction(MENU_STATUS_API), {});
 

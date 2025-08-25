@@ -7,7 +7,7 @@ namespace GOTHIC_NAMESPACE
     auto Hook_oCViewDialogTrade_OnTransferLeft = Union::CreateHook(reinterpret_cast<void*>(0x0068B840), &oCViewDialogTrade::Hook_OnTransferLeft);
     int __fastcall oCViewDialogTrade::Hook_OnTransferLeft(short t_amount)
     {
-        static Utils::Logger* log = Utils::CreateLogger("zDHooks::oCViewDialogTrade::OnTransferLeft");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::oCViewDialogTrade::OnTransferLeft");
         oCItem* pItemChosen = NULL;
 
         if (this->SectionTrade != TRADE_SECTION_RIGHT_INVENTORY)

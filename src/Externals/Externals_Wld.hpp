@@ -20,7 +20,7 @@ namespace GOTHIC_NAMESPACE
         if (t_vobName.IsEmpty() || t_pointName.IsEmpty())
             return;
 
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::Wld_InsertVob");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Externals::Wld_InsertVob");
 
         zSTRING vobName = zSTRING(t_vobName).Upper();
         zSTRING pointName = zSTRING(t_pointName).Upper();
@@ -75,7 +75,7 @@ namespace GOTHIC_NAMESPACE
     {
         if (t_vobName.IsEmpty()) return 0;
 
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::Wld_RemoveVob");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Externals::Wld_RemoveVob");
 
         oCWorld* world = ogame->GetGameWorld();
         zSTRING vobName = zSTRING(t_vobName).Upper();
@@ -132,7 +132,7 @@ namespace GOTHIC_NAMESPACE
 
     static int Wld_SetRainTime(const int t_startHr, const int t_startMin, const int t_endHr, const int t_endMin)
     {
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::Wld_SetRainTime");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Externals::Wld_SetRainTime");
 
         zCSkyControler_Outdoor* skyCtrl = dynamic_cast<zCSkyControler_Outdoor*>(ogame->GetGameWorld()->GetActiveSkyControler());
 
@@ -199,7 +199,7 @@ namespace GOTHIC_NAMESPACE
 
     static void Wld_OverrideWorldFogColors(const int t_index, const zSTRING& t_color)
     {
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::Wld_OverrideWorldFogColors");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Externals::Wld_OverrideWorldFogColors");
 
         zCSkyControler_Outdoor* skyCtrl = dynamic_cast<zCSkyControler_Outdoor*>(ogame->GetGameWorld()->GetActiveSkyControler());
 

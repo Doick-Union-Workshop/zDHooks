@@ -24,7 +24,7 @@
 
     void zVob_SetOnFloor(zCVob* t_vob, zVEC3& t_pos)
     {
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::zCVob::SetOnFloor");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Utils::zCVob_SetOnFloor");
 
         if (!zVob_GetFloorPosition(t_vob, t_pos))
         {
@@ -41,7 +41,7 @@
         if (t_vobName.IsEmpty() || !t_vobPosition)
             return;
 
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::Vob_Rotate");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Externals::Vob_Rotate");
 
         zSTRING vobName = zSTRING(t_vobName).Upper();
         zCVob* vob = ogame->GetGameWorld()->SearchVobByName(vobName);
@@ -69,7 +69,7 @@
     {
         if (t_vobName.IsEmpty()) return;
 
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::Vob_SetVisual");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Externals::Vob_SetVisual");
 
         zSTRING vobName = zSTRING(t_vobName).Upper();
         zCVob* vob = ogame->GetGameWorld()->SearchVobByName(vobName);
@@ -89,7 +89,7 @@
     {
         if (t_vobName.IsEmpty()) return;
 
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::Vob_SetToFloor");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Externals::Vob_SetToFloor");
 
         zSTRING vobName = zSTRING(t_vobName).Upper();
         zCVob* vob = ogame->GetGameWorld()->SearchVobByName(vobName);
@@ -109,7 +109,7 @@
         if (t_vobName.IsEmpty() || t_pointName.IsEmpty())
             return;
 
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::Vob_MoveTo");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Externals::Vob_MoveTo");
 
         zSTRING vobName = zSTRING(t_vobName).Upper();
         oCWorld* world = ogame->GetGameWorld();
@@ -142,7 +142,7 @@
     {
         if (t_vobName.IsEmpty() || !t_vobPosition) return;
 
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::Vob_MoveToPos");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Externals::Vob_MoveToPos");
 
         zSTRING vobName = zSTRING(t_vobName).Upper();
         zCVob* vob = ogame->GetGameWorld()->SearchVobByName(vobName);
@@ -161,7 +161,7 @@
     {
         if (t_vobName.IsEmpty()) return;
 
-        static Utils::Logger* log = Utils::CreateLogger("zDExternals::Vob_SetCollisionDetection");
+        static Utils::Logger* log = Utils::CreateLogger("zDExt::Externals::Vob_SetCollisionDetection");
 
         zSTRING vobName = zSTRING(t_vobName).Upper();
         zCVob* vob = ogame->GetGameWorld()->SearchVobByName(vobName);

@@ -28,6 +28,7 @@ The project is maintained by [Doick](https://github.com/doick):
 ## License
 
 zDExtensions depends on:
+
 - [Union API](https://gitlab.com/union-framework/union-api) and [Gothic API](https://gitlab.com/union-framework/gothic-api) libraries, which are licensed under [BSD 3-Clause license](https://gitlab.com/union-framework/union-api/-/blob/main/LICENSE)
 - [BetterDaedalusExternals](https://github.com/bogu9821/BetterDaedalusExternals), which is licensed under [MIT license](https://github.com/bogu9821/BetterDaedalusExternals/blob/main/LICENSE)
 - [DaedalusCall](https://github.com/bogu9821/DaedalusCall), which is licensed under [MIT license](https://github.com/bogu9821/DaedalusCall/blob/main/LICENSE).

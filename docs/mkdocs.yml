@@ -1,0 +1,96 @@
+# Site
+site_name: zDExtensions Docs
+site_url: https://doick-union-workshop.github.io/zDExtensions
+site_author: Doick
+site_description: zDExtensions is a collection of Union plugins, externals, hooks, and tools for extending and enhancing Gothic games.
+
+# Repository
+repo_name: zDExtensions
+repo_url: https://github.com/Doick-Union-Workshop/zDExtensions
+
+# Copyright
+copyright: Copyright &copy; 2025 Doick
+
+# Configuration
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  font:
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.footer
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+    - content.tooltips
+
+# Navigation
+nav:
+  - Home: index.md
+  - Externals:
+    - AI functions: externals/ai.md
+    - CAST functions: externals/cast.md
+    - HLP functions: externals/hlp.md
+    - Log functions: externals/log.md
+    - MOB functions: externals/mob.md
+    - Menu functions: externals/menu.md
+    - NPC functions: externals/npc.md
+    - String functions: externals/str.md
+    - VOB functions: externals/vob.md
+    - WLD functions: externals/wld.md
+    - Utility functions: externals/utils.md
+  - Hooks:
+    - Hooks API: hooks/hooks_api.md
+    - Save game menu: hooks/menu_savegame.md
+    - Status menu: hooks/menu_status.md
+    - Dropping items by player: hooks/player_drop_item.md
+    - Selling items by player: hooks/player_sell_item.md
+
+# Extras
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Doick-Union-Workshop/zDDocs
+      name: zDDocs repository
+    - icon: fontawesome/brands/discord
+      link: https://discordapp.com/users/219766962312577024
+      name: Doick's profile
+
+# Plugins
+plugins:
+  - search
+
+# Markdown Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      use_pygments: true
+      linenums: true
+      anchor_linenums: true
+      line_anchors: example
+      line_spans: example
+      pygments_lang_class: true
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.betterem:
+      smart_enable: all

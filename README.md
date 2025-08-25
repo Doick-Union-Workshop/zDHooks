@@ -9,7 +9,7 @@ Together, these features make it easier to integrate new mechanics, modify gamep
 
 ## Documentation
 
-Documentation of project is provided as a [GitHub Page site](https://doick-union-workshop.github.io/zDExtensions/hooks/hooks_api/).
+Documentation of project is provided as a [GitHub Page site](https://doick-union-workshop.github.io/zDExtensions).
 
 ## Support
 

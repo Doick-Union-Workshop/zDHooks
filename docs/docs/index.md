@@ -23,7 +23,7 @@ The project is maintained by [Doick](https://github.com/doick):
 
 - Discord: [@doic](https://discordapp.com/users/219766962312577024)
 
-![zDExtensions contributors](https://contrib.nn.ci/api?repo=Doick-Union-Workshop/zDDocs)
+![zDExtensions contributors](https://contrib.nn.ci/api?repo=Doick-Union-Workshop/zDExtensions)
 
 ## License
 

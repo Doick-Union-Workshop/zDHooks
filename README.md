@@ -1,8 +1,10 @@
 # zDExtensions
 
 **zDExtensions** is a Union plugin that extends the Gothic games by providing:
+
 - customisable ZenGin hooks, accessible through an API, which let you extend existing game systems via Daedalus scripts,
 - new external functions, enabling Daedalus scripts to directly communicate with the ZenGin engine.
+
 Together, these features make it easier to integrate new mechanics, modify gameplay, and expand the possibilities of Daedalus scripting.
 
 ## Documentation
